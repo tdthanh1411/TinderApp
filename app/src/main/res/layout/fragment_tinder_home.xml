@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tinder.TinderHomeFragment">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:layout_marginHorizontal="@dimen/dimen_10"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/imgLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgLogo" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="@dimen/dimen_60"
+        android:layout_height="@dimen/dimen_60"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:src="@drawable/ic_tinder_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.stackview.cardstackview.CardStackView
+        android:id="@+id/cardStackView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/dimen_4"
+        android:paddingVertical="@dimen/dimen_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_18"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgRefresh"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/bg_circle_stroke_white"
+                android:elevation="2dp"
+                android:padding="@dimen/dimen_12"
+                android:src="@drawable/ic_reload" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgSkip"
+                android:layout_width="@dimen/dimen_60"
+                android:layout_height="@dimen/dimen_60"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/bg_circle_stroke_red"
+                android:elevation="2dp"
+                android:padding="@dimen/dimen_18"
+                android:src="@drawable/ic_cancel"
+                android:tint="@color/red" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgStart"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/bg_circle_stroke_blue"
+                android:elevation="2dp"
+                android:padding="@dimen/dimen_12"
+                android:src="@drawable/ic_star" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgFavorite"
+                android:layout_width="@dimen/dimen_60"
+                android:layout_height="@dimen/dimen_60"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/bg_circle_stroke_green"
+                android:elevation="2dp"
+                android:padding="@dimen/dimen_12"
+                android:src="@drawable/ic_favorite" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgBolt"
+                android:layout_width="@dimen/dimen_44"
+                android:layout_height="@dimen/dimen_44"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/bg_circle_stroke_purple"
+                android:elevation="2dp"
+                android:padding="@dimen/dimen_12"
+                android:src="@drawable/ic_bolt"
+                android:tint="@color/purple_200" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:elevation="@dimen/dimen_2"
+    android:padding="@dimen/dimen_6">
+
+    <LinearLayout
+        android:id="@+id/llCopy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/llRemove"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dimen_44"
+            android:layout_height="@dimen/dimen_44"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/dimen_6"
+            android:src="@drawable/ic_round_content_copy_24"
+            android:tint="@color/blue" />
+
+        <TextView
+            style="@style/TextSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/txt_copy"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRemove"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/llCopy"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dimen_44"
+            android:layout_height="@dimen/dimen_44"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/dimen_6"
+            android:src="@drawable/ic_round_delete_24"
+            android:tint="@color/blue" />
+
+        <TextView
+            style="@style/TextSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/txt_remove" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

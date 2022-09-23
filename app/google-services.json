@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "2647078598",
+    "project_id": "fir-tinder-chat",
+    "storage_bucket": "fir-tinder-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2647078598:android:d44f9e278794f6ee0949c7",
+        "android_client_info": {
+          "package_name": "com.napa.demotinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2647078598-ep2rgtg8kd0gbkf5p52qolb9gl6rm0ud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.napa.demotinder",
+            "certificate_hash": "2263f9112173858c86ee7cc68d9d09a689af98a0"
+          }
+        },
+        {
+          "client_id": "2647078598-if2l165dqnl61e2qq0rkpmheleaie7s1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoAhtPgwHaC6mtv_kd52mbTwn9D4INJ0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2647078598-if2l165dqnl61e2qq0rkpmheleaie7s1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "2647078598-1kqniln5tg4d67kujiph9afk2v2vs10o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nghia.video-app-community"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

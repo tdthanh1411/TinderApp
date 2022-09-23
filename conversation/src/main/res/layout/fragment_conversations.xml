@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgPerson"
+        android:layout_width="@dimen/dimen_56"
+        android:layout_height="@dimen/dimen_56"
+        android:layout_marginStart="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_10"
+        android:text="@string/txt_chats"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="@dimen/text_size_26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgPerson"
+        app:layout_constraintStart_toEndOf="@id/imgPerson"
+        app:layout_constraintTop_toTopOf="@id/imgPerson" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgNewMessage"
+        android:layout_width="@dimen/dimen_44"
+        android:layout_height="@dimen/dimen_44"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:src="@drawable/ic_new_message"
+        android:tint="?android:textColorSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/imgPerson"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgPerson" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@drawable/bg_corners_10"
+        android:drawableStart="@drawable/ic_round_search_24"
+        android:drawablePadding="@dimen/dimen_5"
+        android:hint="@string/txt_search"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:paddingHorizontal="@dimen/dimen_10"
+        android:paddingVertical="@dimen/dimen_12"
+        android:textSize="@dimen/text_size_16sp"
+        app:layout_constraintTop_toBottomOf="@id/imgPerson" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewConversation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimen_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtSearch"
+        tools:listitem="@layout/item_conversation" />
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10"
+        app:layout_constraintTop_toBottomOf="@id/edtSearch"
+        app:shimmer_highlight_alpha="0"
+        app:shimmer_highlight_color="@color/whiteGray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+
+            <include layout="@layout/item_shimmer" />
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

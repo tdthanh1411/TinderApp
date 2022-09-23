@@ -1,0 +1,147 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
+
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.napa.demotinder"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1@aar'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    implementation "androidx.recyclerview:recyclerview:1.2.1@aar"
+
+    implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    //Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+
+    //coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+
+    //room
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    implementation("androidx.room:room-guava:$room_version")
+    testImplementation("androidx.room:room-testing:$room_version")
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    implementation "io.coil-kt:coil:$coil_version"
+    implementation "io.coil-kt:coil-gif:$coil_version"
+
+    //splash
+    implementation 'androidx.core:core-splashscreen:1.0.0-rc01'
+
+    //dot indicator
+    implementation("com.tbuonomo:dotsindicator:4.3")
+
+    // uni flow
+    implementation "org.uniflow-kt:uniflow-android:$uniflow_version"
+
+    //twilio
+    implementation "com.twilio:video-android-ktx:$twilio_version"
+    implementation "com.twilio:audioswitch:$twilio_audioswitch_version"
+    implementation "com.twilio:twilio-android-env:$twilio_android_env_version"
+
+    implementation project(':twiliovideo')
+    implementation project(":conversation")
+    implementation project(":cardstackview")
+
+    // rxjava
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+
+    //paging
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    implementation "de.hdodenhof:circleimageview:$circle_image_view_version"
+
+    //viewpager
+    implementation "androidx.viewpager2:viewpager2:$viewpager2_version"
+
+    //giphy
+    implementation "com.giphy.sdk:ui:2.1.18"
+
+    implementation 'androidx.emoji:emoji-bundled:1.1.0'
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+
+
+    // Twilio
+    implementation "com.twilio:conversations-android-with-symbols:3.0.0"
+    // or without symbols:
+    // implementation "com.twilio:conversations-android:3.0.0"
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:30.3.0')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+
+}

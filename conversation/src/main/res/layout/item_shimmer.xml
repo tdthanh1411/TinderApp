@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/dimen_18"
+    android:paddingTop="@dimen/dimen_12"
+    android:paddingEnd="@dimen/dimen_18"
+    android:paddingBottom="@dimen/dimen_12">
+
+    <View
+        android:id="@+id/imgAvatar"
+        android:layout_width="@dimen/dimen_56"
+        android:layout_height="@dimen/dimen_56"
+        android:background="@color/color_shimmer"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/tvConversationName"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_24"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:background="@color/color_shimmer"
+        app:layout_constraintBottom_toTopOf="@id/tvMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        app:layout_constraintTop_toTopOf="@id/imgAvatar" />
+
+    <View
+        android:id="@+id/tvMessage"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/dimen_4"
+        android:layout_height="@dimen/dimen_24"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:background="@color/color_shimmer"
+        app:layout_constraintBottom_toBottomOf="@id/imgAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        app:layout_constraintTop_toBottomOf="@id/tvConversationName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

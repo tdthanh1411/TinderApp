@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvCancel"
+        style="@style/TextSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:paddingHorizontal="@dimen/dimen_20"
+        android:paddingVertical="@dimen/dimen_10"
+        android:text="@string/txt_cancel"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/TextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_message"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvCancel" />
+
+
+    <LinearLayout
+        android:id="@+id/llTo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_56"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:background="#F9F8F9"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvCancel">
+
+        <TextView
+            style="@style/TextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:text="@string/txt_to"
+            android:textStyle="normal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dimen_10"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14sp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgNewGroup"
+        android:layout_width="@dimen/dimen_40"
+        android:layout_height="@dimen/dimen_40"
+        android:layout_marginHorizontal="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:src="@drawable/ic_group"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llTo" />
+
+
+    <TextView
+        android:id="@+id/tvNewGroup"
+        style="@style/TextPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_20"
+        android:paddingVertical="@dimen/dimen_4"
+        android:text="@string/txt_new_group"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgNewGroup"
+        app:layout_constraintStart_toEndOf="@id/imgNewGroup"
+        app:layout_constraintTop_toTopOf="@id/imgNewGroup" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgNewGroupNext"
+        android:layout_width="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_20"
+        android:layout_marginHorizontal="@dimen/dimen_20"
+        android:padding="@dimen/dimen_3"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/imgNewGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgNewGroup" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewListUser"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgNewGroup" />
+
+    <ProgressBar
+        android:id="@+id/progressBarNewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/blue"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

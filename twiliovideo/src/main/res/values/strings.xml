@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_video_track">Screen Video Track</string>
+    <string name="camera_video_track">Camera Video Track</string>
+    <string name="you">You</string>
+    <string name="txt_waiting">Waiting</string>
+    <string name="txt_video_cam">Video Cam</string>
+    <string name="txt_end_call">End Call</string>
+    <string name="txt_mic">Mic</string>
+</resources>

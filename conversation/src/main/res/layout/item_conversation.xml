@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:focusableInTouchMode="false"
+    android:paddingStart="@dimen/dimen_18"
+    android:paddingTop="@dimen/dimen_12"
+    android:paddingEnd="@dimen/dimen_18"
+    android:paddingBottom="@dimen/dimen_12">
+
+<com.twilio.conversation.avatarview.AvatarView
+    android:id="@+id/imgAvatar"
+    android:layout_width="@dimen/dimen_56"
+    android:layout_height="@dimen/dimen_56"
+    app:avatarViewBorderColor="@color/blue"
+    app:avatarViewBorderWidth="0dp"
+    android:scaleType="centerCrop"
+    app:avatarViewErrorPlaceholder="@drawable/ic_avatar"
+    app:avatarViewIndicatorBorderColor="@color/white"
+    app:avatarViewIndicatorBorderSizeCriteria="10"
+    app:avatarViewIndicatorColor="@color/green"
+    app:avatarViewIndicatorEnabled="true"
+    app:avatarViewIndicatorPosition="bottomRight"
+    app:avatarViewIndicatorSizeCriteria="8"
+    app:avatarViewInitialsTextColor="@color/white"
+    app:avatarViewInitialsTextSize="50sp"
+    app:avatarViewInitialsTextStyle="bold"
+    app:avatarViewPlaceholder="@drawable/ic_avatar"
+    app:layout_constraintHorizontal_chainStyle="packed"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:src="@tools:sample/avatars"
+    />
+
+    <TextView
+        android:id="@+id/tvConversationName"
+        style="@style/TextPrimary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:text="Conversation name"
+        app:layout_constraintBottom_toTopOf="@id/tvMessage"
+        app:layout_constraintEnd_toStartOf="@id/imgConversationStateIcon"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        app:layout_constraintTop_toTopOf="@id/imgAvatar" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        style="@style/TextSecondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_10"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="This is a waiting message"
+        app:layout_constraintBottom_toBottomOf="@id/imgAvatar"
+        app:layout_constraintEnd_toStartOf="@id/tvDateTime"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        app:layout_constraintTop_toBottomOf="@id/tvConversationName" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgConversationStateIcon"
+        android:layout_width="@dimen/dimen_14"
+        android:layout_height="@dimen/dimen_14"
+        android:layout_marginEnd="@dimen/dimen_5"
+        android:src="@drawable/ic_muted_conversation"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tvConversationName"
+        app:layout_constraintEnd_toStartOf="@id/imgMessageStateIcon"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@id/tvConversationName" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgMessageStateIcon"
+        android:layout_width="@dimen/dimen_14"
+        android:layout_height="@dimen/dimen_14"
+        app:layout_constraintBottom_toBottomOf="@id/tvConversationName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@id/tvConversationName"
+        tools:src="@drawable/ic_waiting_message" />
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        style="@style/TextSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="@id/tvMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@+id/tvMessage"
+        app:layout_goneMarginEnd="0dp"
+        tools:text="Yesterday" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

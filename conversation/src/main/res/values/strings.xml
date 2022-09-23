@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <plurals name="participants_count">
+        <item quantity="one">%d participant</item>
+        <item quantity="other">%d participants</item>
+    </plurals>
+
+    <string name="yesterday">Yesterday</string>
+    <string name="days_ago">%d days ago</string>
+    <plurals name="weeks_ago">
+        <item quantity="one">%d week ago</item>
+        <item quantity="other">%d weeks ago</item>
+    </plurals>
+    <plurals name="years_ago">
+        <item quantity="one">%d year ago</item>
+        <item quantity="other">%d years ago</item>
+    </plurals>
+
+    <!-- Reactions -->
+    <string name="reaction_heart">&#x2764;</string>
+    <string name="reaction_laugh">&#x1F602;</string>
+    <string name="reaction_sad">&#x1F61E;</string>
+    <string name="reaction_pouting">&#x1F621;</string>
+    <string name="reaction_thumbs_up">&#x1F44D;</string>
+    <string name="reaction_thumbs_down">&#x1F44E;</string>
+
+    <!-- type delete -->
+    <string name="type_delete_normal">DELETE_NORMAL</string>
+    <string name="type_delete_for_you">DELETE_FOR_YOU</string>
+    <string name="type_delete_all">DELETE_ALL</string>
+
+
+    <string name="message_has_been_deleted">Message has been deleted.</string>
+
+    <string name="err_conversation_generic_error">Request failed, please try again later</string>
+    <string name="err_failed_to_create_conversation">Failed to create conversation</string>
+    <string name="err_failed_to_join_conversation">Failed to join conversation</string>
+    <string name="err_failed_to_remove_conversation">Failed to remove conversation</string>
+    <string name="err_failed_to_leave_conversation">Failed to leave conversation</string>
+    <string name="err_failed_to_fetch_user_conversations">Failed to fetch user conversations</string>
+    <string name="err_failed_to_mute_conversations">Failed to mute conversation</string>
+    <string name="err_failed_to_unmute_conversation">Failed to unmute conversation</string>
+    <string name="err_failed_to_update_reaction">Failed to update reaction</string>
+    <string name="err_failed_to_rename_conversation">Failed to rename conversation</string>
+    <string name="err_failed_to_get_conversation">Failed to get conversation</string>
+    <string name="err_failed_to_fetch_participants">Failed to fetch participants</string>
+    <string name="err_failed_to_add_participant">Failed to add participant</string>
+    <string name="err_failed_to_remove_participant">Failed to remove participant</string>
+    <string name="err_failed_to_update_user">Can\'t update profile</string>
+    <string name="err_failed_to_remove_message">Failed to remove message</string>
+    <string name="err_failed_to_copy_message">Failed to copy message</string>
+
+    <!-- Media messages -->
+    <string name="attachment_uploading">Uploading… %s</string>
+    <string name="attachment_downloading">Downloading… %s</string>
+    <string name="attachment_tap_to_open">Tap to open</string>
+    <string name="attachment_file_name_unknown">Unknown</string>
+    <string name="attachment_file_manager">File manager</string>
+    <string name="attachment_take_photo">Take photo</string>
+    <string name="err_failed_to_capture_image">Failed to capture image</string>
+    <string name="err_failed_to_send_media">Failed to send media</string>
+    <string name="err_failed_to_resend_media">Failed to re-send media</string>
+    <string name="err_failed_to_upload_media">Failed to upload</string>
+    <string name="err_failed_to_download_media">Failed to download</string>
+
+    <string name="sign_out_succeeded">Successfully signed out</string>
+    <string name="message_send_error">An error has occurred. Tap for more info.</string>
+    <string name="new_message">New message</string>
+
+    <string name="close">Close</string>
+    <string name="retry">Retry</string>
+
+
+    <string name="send_error_dialog_title">Error code [%d]</string>
+    <string name="send_error_dialog_message_default">Error occurred while sending the message. Check your internet connection and try again.</string>
+    <string name="send_error_dialog_invalid_media_content_type">Invalid message media content type</string>
+
+
+    <string name="remove_message_dialog_title">Delete message?</string>
+    <string name="remove_message_dialog_message">This cannot be undone</string>
+    <string name="delete">Delete</string>
+    <string name="txt_chats">Chats</string>
+    <string name="txt_search">Search</string>
+    <string name="no_conversation">No conversation yet</string>
+    <string name="type_here">Type here...</string>
+    <string name="txt_crop">Crop</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_to">To:</string>
+    <string name="txt_new_group">Create a New Group</string>
+    <string name="txt_create_failed">Create New Message Failed!</string>
+    <string name="txt_copy">Copy</string>
+    <string name="txt_delete">Delete</string>
+    <string name="txt_remove">Remove</string>
+    <string name="txt_unseen_everyone">Unseen everyone</string>
+    <string name="txt_unseen_for_you">Unseen for you</string>
+    <string name="tv_add_member">Add member</string>
+    <string name="tv_next">Next</string>
+    <string name="tv_suggest">Suggest</string>
+    <string name="txt_name_room">Room name</string>
+    <string name="tv_created">Created</string>
+
+    <plurals name="typing_indicator">
+        <item quantity="one">%s is typing…</item>
+        <item quantity="other">%s are typing…</item>
+    </plurals>
+</resources>

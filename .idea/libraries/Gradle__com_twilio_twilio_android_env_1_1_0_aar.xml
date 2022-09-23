@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.twilio:twilio-android-env:1.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7e35e18930dfde75ace676e806c6df09/transformed/twilio-android-env-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7e35e18930dfde75ace676e806c6df09/transformed/twilio-android-env-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7e35e18930dfde75ace676e806c6df09/transformed/twilio-android-env-1.1.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

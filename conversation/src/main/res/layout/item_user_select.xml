@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/dimen_6"
+    android:paddingVertical="@dimen/dimen_5">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="@dimen/dimen_56"
+        android:layout_height="@dimen/dimen_56"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/viewCancel"
+        android:layout_width="@dimen/dimen_16"
+        android:layout_height="@dimen/dimen_16"
+        android:background="@drawable/bg_circle"
+        app:layout_constraintEnd_toEndOf="@id/imgAvatar"
+        app:layout_constraintTop_toTopOf="@id/imgAvatar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dimen_14"
+        android:layout_height="@dimen/dimen_14"
+        android:src="@drawable/ic_round_cancel_24"
+        android:tint="@color/blue"
+        android:elevation="@dimen/dimen_2"
+        app:layout_constraintBottom_toBottomOf="@id/viewCancel"
+        app:layout_constraintEnd_toEndOf="@id/viewCancel"
+        app:layout_constraintStart_toStartOf="@id/viewCancel"
+        app:layout_constraintTop_toTopOf="@id/viewCancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/participant_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSelected"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/participantSelectedBackground">
+
+        <ImageView
+            android:id="@+id/imgStub"
+            android:layout_width="@dimen/dimen_120"
+            android:layout_height="@dimen/dimen_120"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_account_circle_white_48px" />
+
+        <TextView
+            android:id="@+id/selected_identity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/imgStub"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgStub" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/participantSelectedBackground">
+
+        <com.twilio.video.VideoTextureView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserMicOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:drawableStartCompat="@drawable/ic_baseline_mic_off_24"
+            app:drawableTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.85"
+            tools:text="string/app_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

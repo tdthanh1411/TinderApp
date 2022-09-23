@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="8dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_6"
+            android:layout_margin="@dimen/dimen_6"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="@id/viewPager"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="0dp"
+            app:tabPaddingEnd="@dimen/dimen_10"
+            app:tabPaddingStart="@dimen/dimen_10" />
+
+
+        <View
+            android:id="@+id/previewViewPage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/nextViewPage"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/nextViewPage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/previewViewPage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dimen_75"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/left_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dimen_160"
+            android:layout_height="@dimen/dimen_100"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/dimen_20"
+            android:scaleType="fitXY"
+            android:src="@drawable/nope_tag"
+            android:tint="@color/red" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/right_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dimen_160"
+            android:layout_height="@dimen/dimen_100"
+            android:layout_gravity="start"
+            android:layout_margin="@dimen/dimen_20"
+            android:scaleType="fitXY"
+            android:src="@drawable/like_tag"
+            android:tint="@color/green" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/top_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+</androidx.cardview.widget.CardView>

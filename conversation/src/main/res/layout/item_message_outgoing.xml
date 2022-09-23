@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dimen_12"
+    android:focusableInTouchMode="false">
+
+    <TextView
+        android:id="@+id/tvMessageDateTime"
+        style="@style/TextSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size_12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="15:58" />
+
+    <Space
+        android:id="@+id/spaceMessageHeader"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMessageDateTime" />
+
+    <TextView
+        android:id="@+id/tvMessageBody"
+        style="@style/TextSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_4"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:autoLink="web"
+        android:background="@drawable/message_only"
+        android:gravity="start|center_vertical"
+        android:singleLine="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/imgMessageSendStatus"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spaceMessageHeader"
+        app:layout_constraintWidth_max="@dimen/dimen_200"
+        tools:backgroundTint="@color/blue"
+        tools:text="tools:sample/lorem/random"
+        tools:visibility="visible" />
+
+    <com.twilio.conversation.common.widget.BubbleImageView
+        android:id="@+id/imgAttachmentThumbnail"
+        android:layout_width="@dimen/dimen_200"
+        android:layout_height="@dimen/dimen_200"
+        android:layout_marginHorizontal="@dimen/dimen_4"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
+        app:layout_constraintEnd_toStartOf="@id/imgMessageSendStatus"
+        app:layout_constraintTop_toBottomOf="@id/tvMessageBody"
+        tools:src="@tools:sample/backgrounds/scenic"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAttachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_4"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:background="@drawable/bg_message_attachment"
+        android:paddingHorizontal="@dimen/dimen_6"
+        android:paddingVertical="@dimen/dimen_12"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/imgMessageSendStatus"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgAttachmentThumbnail"
+        app:layout_constraintWidth_max="300dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgAttachmentIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_attachment_to_download" />
+
+        <TextView
+            android:id="@+id/tvAttachmentFileName"
+            style="@style/TextPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:ellipsize="middle"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAttachmentIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Extremely important attachment.pptx" />
+
+        <ProgressBar
+            android:id="@+id/progressAttachment"
+            android:layout_width="@dimen/dimen_14"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:indeterminateTint="@color/color_text_subtitle"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAttachmentInfo"
+            app:layout_constraintEnd_toStartOf="@+id/imgAttachmentFailed"
+            app:layout_constraintStart_toStartOf="@+id/tvAttachmentFileName"
+            app:layout_constraintTop_toTopOf="@+id/tvAttachmentInfo"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgAttachmentFailed"
+            android:layout_width="@dimen/dimen_14"
+            android:layout_height="@dimen/dimen_14"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:src="@drawable/ic_failed_message"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAttachmentInfo"
+            app:layout_constraintEnd_toStartOf="@+id/tvAttachmentInfo"
+            app:layout_constraintStart_toEndOf="@+id/progressAttachment"
+            app:layout_constraintTop_toTopOf="@+id/tvAttachmentInfo"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvAttachmentInfo"
+            style="@style/TextSecondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAttachmentFailed"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttachmentFileName"
+            tools:text="542kb" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPreviewUrl"
+        android:layout_width="@dimen/dimen_200"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/dimen_5"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/imgMessageSendStatus"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clAttachment"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_gray"
+            android:paddingBottom="@dimen/dimen_10">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPreviewUrl"
+                android:layout_width="@dimen/dimen_200"
+                android:layout_height="@dimen/dimen_120"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/tvTitlePreviewUrl"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:paddingHorizontal="@dimen/dimen_10"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgPreviewUrl"
+                tools:text="@string/new_message" />
+
+            <TextView
+                android:id="@+id/tvDescriptionPreviewUrl"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxHeight="100dp"
+                android:paddingHorizontal="@dimen/dimen_10"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitlePreviewUrl"
+                tools:text="@string/new_message" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPreview"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                android:layout_marginHorizontal="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDescriptionPreviewUrl"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/tvUrl"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toEndOf="@id/imgPreview"
+                app:layout_constraintTop_toBottomOf="@id/tvDescriptionPreviewUrl"
+                tools:text="@string/new_message" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llGifPhy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:maxWidth="@dimen/dimen_200"
+        android:maxHeight="@dimen/dimen_200"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/imgMessageSendStatus"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewPreviewUrl">
+
+        <com.giphy.sdk.ui.views.GPHMediaView
+            android:id="@+id/gphVideoMediaView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="@dimen/dimen_200"
+            android:maxHeight="@dimen/dimen_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/llMessageReactionBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_22"
+        android:background="@drawable/bg_reactions_outgoing"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/tvMessageBody"
+        app:layout_constraintEnd_toEndOf="@id/tvMessageBody"
+        app:layout_constraintTop_toBottomOf="@id/tvMessageBody" />
+
+    <LinearLayout
+        android:id="@+id/llMessageReactionGif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_22"
+        android:background="@drawable/bg_reactions_outgoing"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/llGifPhy"
+        app:layout_constraintEnd_toEndOf="@id/llGifPhy"
+        app:layout_constraintTop_toBottomOf="@id/llGifPhy" />
+
+    <LinearLayout
+        android:id="@+id/llMessageReactionPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_22"
+        android:background="@drawable/bg_reactions_outgoing"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/imgAttachmentThumbnail"
+        app:layout_constraintEnd_toEndOf="@id/imgAttachmentThumbnail"
+        app:layout_constraintTop_toBottomOf="@id/imgAttachmentThumbnail" />
+
+    <LinearLayout
+        android:id="@+id/llMessageReactionAttachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_22"
+        android:background="@drawable/bg_reactions_outgoing"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/clAttachment"
+        app:layout_constraintEnd_toEndOf="@id/clAttachment"
+        app:layout_constraintTop_toBottomOf="@id/clAttachment" />
+
+    <LinearLayout
+        android:id="@+id/llMessageReactionPreviewUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_22"
+        android:background="@drawable/bg_reactions_outgoing"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewPreviewUrl"
+        app:layout_constraintEnd_toEndOf="@id/cardViewPreviewUrl"
+        app:layout_constraintTop_toBottomOf="@id/cardViewPreviewUrl" />
+
+    <TextView
+        android:id="@+id/tvMessageSendError"
+        style="@style/TextViewError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_4"
+        android:layout_marginEnd="@dimen/dimen_4"
+        android:text="@string/message_send_error"
+        app:layout_constraintEnd_toStartOf="@id/imgMessageSendStatus"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llGifPhy"
+        tools:visibility="gone" />
+
+
+    <Space
+        android:id="@+id/spaceMessageFooter"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMessageSendError" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgMessageSendStatus"
+        android:layout_width="@dimen/dimen_12"
+        android:layout_height="@dimen/dimen_12"
+        app:layout_constraintBottom_toBottomOf="@id/tvMessageSendError"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:src="@drawable/ic_sent_message" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="
+        spaceMessageFooter,
+        spaceMessageHeader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

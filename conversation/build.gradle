@@ -1,0 +1,111 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id("dagger.hilt.android.plugin")
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    // Twilio
+    implementation "com.twilio:conversations-android-with-symbols:3.0.0"
+    // or without symbols:
+    // implementation "com.twilio:conversations-android:3.0.0"
+
+    //coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+
+    //lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+    //room
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    implementation("androidx.room:room-guava:$room_version")
+    testImplementation("androidx.room:room-testing:$room_version")
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //paging
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //datetime
+    implementation "org.jetbrains.kotlinx:kotlinx-datetime:$date_time_version"
+
+    implementation "de.hdodenhof:circleimageview:$circle_image_view_version"
+
+    implementation 'androidx.emoji:emoji-bundled:1.1.0'
+
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    implementation "io.coil-kt:coil:$coil_version"
+    implementation "io.coil-kt:coil-gif:$coil_version"
+
+    //jsoup preview url
+    implementation 'org.jsoup:jsoup:1.13.1'
+
+    //giphy
+    implementation "com.giphy.sdk:ui:2.1.18"
+
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+
+
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
+
+}

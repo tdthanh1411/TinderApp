@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextPrimary">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">@dimen/text_size_17sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextSecondary">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textSize">@dimen/dimen_14</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextTertiary">
+        <item name="android:textColor">?android:attr/textColorTertiary</item>
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextViewError">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="EmojiTextView">
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">@dimen/text_size_28sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_reaction</item>
+        <item name="android:layout_marginStart">@dimen/dimen_4</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_4</item>
+
+    </style>
+
+    <style name="TextViewMenuItem">
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:textColor">@color/text_title</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:paddingStart">@dimen/dimen_15</item>
+        <item name="android:paddingEnd">@dimen/dimen_15</item>
+        <item name="android:drawablePadding">@dimen/dimen_8</item>
+    </style>
+
+
+</resources>

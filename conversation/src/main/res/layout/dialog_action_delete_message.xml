@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/dimen_4"
+    android:orientation="vertical"
+    android:paddingVertical="@dimen/dimen_20">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tvUnseenEveryone"
+        style="@style/TextPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/dimen_14"
+        android:text="@string/txt_unseen_everyone"
+        android:textStyle="normal" />
+
+    <View
+        android:id="@+id/viewUnseenEveryone"
+        app:layout_constraintTop_toBottomOf="@id/tvUnseenEveryone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/dimen_30"
+        android:background="@color/color_gray" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/tvUnseenEveryone"
+        android:id="@+id/tvUnseenForYou"
+        style="@style/TextPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/dimen_14"
+        android:text="@string/txt_unseen_for_you"
+        android:textStyle="normal" />
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/tvUnseenForYou"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/dimen_30"
+        android:background="@color/color_gray" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/tvUnseenForYou"
+        android:id="@+id/tvCancel"
+        style="@style/TextPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/dimen_10"
+        android:text="@string/txt_cancel"
+        android:textColor="@color/blue" />
+
+    <androidx.constraintlayout.widget.Group
+        app:constraint_referenced_ids="tvUnseenEveryone,viewUnseenEveryone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/groupEveryOne"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
