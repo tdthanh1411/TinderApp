@@ -539,68 +539,68 @@ class RoomActivity : AppCompatActivity() {
 
                         }
                     }
-                    3 -> {
-                        isEndCall = it.size
-                        val participantViewStateFirst = it[0]
-                        val participantViewStateSecond = it[1]
-                        val participantViewStateThird = it[2]
-                        with(binding) {
-                            clViewPrimary.isVisible = false
-                            cardViewThumbView.isVisible = false
-                            recyclerViewParticipant.isVisible = false
-
-                            roomGroup.root.isVisible = true
-                            roomGroup.cardViewThumbViewFour.isVisible = false
-
-                            setupThumbViewVideoView(
-                                participantViewStateFirst,
-                                roomGroup.thumbViewVideoViewFirst
-                            )
-                            setupThumbViewVideoView(
-                                participantViewStateSecond,
-                                roomGroup.thumbViewVideoViewSecond
-                            )
-                            setupThumbViewVideoView(
-                                participantViewStateThird,
-                                roomGroup.thumbViewVideoViewThird
-                            )
-
-                        }
-
-                    }
-                    4 -> {
-
-                        isEndCall = it.size
-                        val participantViewStateFirst = it[0]
-                        val participantViewStateSecond = it[1]
-                        val participantViewStateThird = it[2]
-                        val participantViewStateFour = it[3]
-                        with(binding) {
-                            clViewPrimary.isVisible = false
-                            cardViewThumbView.isVisible = false
-                            recyclerViewParticipant.isVisible = false
-                            roomGroup.root.isVisible = true
-
-                            setupThumbViewVideoView(
-                                participantViewStateFirst,
-                                roomGroup.thumbViewVideoViewFirst
-                            )
-                            setupThumbViewVideoView(
-                                participantViewStateSecond,
-                                roomGroup.thumbViewVideoViewSecond
-                            )
-                            setupThumbViewVideoView(
-                                participantViewStateThird,
-                                roomGroup.thumbViewVideoViewThird
-                            )
-                            setupThumbViewVideoView(
-                                participantViewStateFour,
-                                roomGroup.thumbViewVideoViewFour
-                            )
-
-                        }
-
-                    }
+//                    3 -> {
+//                        isEndCall = it.size
+//                        val participantViewStateFirst = it[0]
+//                        val participantViewStateSecond = it[1]
+//                        val participantViewStateThird = it[2]
+//                        with(binding) {
+//                            clViewPrimary.isVisible = false
+//                            cardViewThumbView.isVisible = false
+//                            recyclerViewParticipant.isVisible = false
+//
+//                            roomGroup.root.isVisible = true
+//                            roomGroup.cardViewThumbViewFour.isVisible = false
+//
+//                            setupThumbViewVideoView(
+//                                participantViewStateFirst,
+//                                roomGroup.thumbViewVideoViewFirst
+//                            )
+//                            setupThumbViewVideoView(
+//                                participantViewStateSecond,
+//                                roomGroup.thumbViewVideoViewSecond
+//                            )
+//                            setupThumbViewVideoView(
+//                                participantViewStateThird,
+//                                roomGroup.thumbViewVideoViewThird
+//                            )
+//
+//                        }
+//
+//                    }
+//                    4 -> {
+//
+//                        isEndCall = it.size
+//                        val participantViewStateFirst = it[0]
+//                        val participantViewStateSecond = it[1]
+//                        val participantViewStateThird = it[2]
+//                        val participantViewStateFour = it[3]
+//                        with(binding) {
+//                            clViewPrimary.isVisible = false
+//                            cardViewThumbView.isVisible = false
+//                            recyclerViewParticipant.isVisible = false
+//                            roomGroup.root.isVisible = true
+//
+//                            setupThumbViewVideoView(
+//                                participantViewStateFirst,
+//                                roomGroup.thumbViewVideoViewFirst
+//                            )
+//                            setupThumbViewVideoView(
+//                                participantViewStateSecond,
+//                                roomGroup.thumbViewVideoViewSecond
+//                            )
+//                            setupThumbViewVideoView(
+//                                participantViewStateThird,
+//                                roomGroup.thumbViewVideoViewThird
+//                            )
+//                            setupThumbViewVideoView(
+//                                participantViewStateFour,
+//                                roomGroup.thumbViewVideoViewFour
+//                            )
+//
+//                        }
+//
+//                    }
                     else -> {
                         isEndCall = it.size
                         with(binding) {
@@ -633,7 +633,7 @@ class RoomActivity : AppCompatActivity() {
             setMuted(participantViewState.isMuted)
             setPinned(participantViewState.isPinned)
 
-            updateVideoTrackFirst(participantViewState)
+            updateVideoTrack(participantViewState)
         }
     }
 
