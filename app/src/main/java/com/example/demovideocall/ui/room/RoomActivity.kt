@@ -45,6 +45,11 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.uniflow.android.livedata.onEvents
 import io.uniflow.android.livedata.onStates
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
+import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 
@@ -61,6 +66,8 @@ class RoomActivity : AppCompatActivity() {
         private const val CONTROL_TYPE_MIC = 3
 
     }
+
+    private val client = OkHttpClient()
 
     private lateinit var binding: ActivityRoomBinding
 
@@ -370,11 +377,31 @@ class RoomActivity : AppCompatActivity() {
     }
 
     private fun connectToRoom() {
-        val token =
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2E3MzE1ODZiMmZiZmY5MDc2YzRlZWQ1MzU1YTM3OThkLTE2NTg0ODM4NTMiLCJncmFudHMiOnsiaWRlbnRpdHkiOiJUSEFOSFRSQU5ESU5IIiwidmlkZW8iOnsicm9vbSI6ImFiY0AxMjMifSwiY2hhdCI6eyJzZXJ2aWNlX3NpZCI6IklTMmFhZDBhNDhlMWNkNDliNmIwOTBiYTgyZTRhNGZhZTgifX0sImlhdCI6MTY1ODQ4Mzg1MywiZXhwIjoxNjU4NDk4MjUzLCJpc3MiOiJTS2E3MzE1ODZiMmZiZmY5MDc2YzRlZWQ1MzU1YTM3OThkIiwic3ViIjoiQUMwMzA3YTg2NzVmN2I0NDk5NzI3ZDU0NzhhMjY1MWZmYSJ9.pTg5Ehv5TAJvBQqljrKUIgvMHKy7S7VM95f0u3Jdbkk"
-        val roomName = ""
-        val viewEvent = Connect(token, roomName)
-        roomViewModel.processInput(viewEvent)
+        val name = intent.getStringExtra("identity")
+        val myJSONObject = "{\"passcode\":\"33303431502004\",\"user_identity\":\"$name\",\"room_name\":\"abcd1234\",\"create_room\":true}"
+        println(myJSONObject)
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+        val requestBody = myJSONObject.toString().toRequestBody(mediaType)
+        val request = Request.Builder()
+            .url("https://video-app-3150-2004-dev.twil.io/token")
+            .post(requestBody)
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {}
+            override fun onResponse(call: Call, response: Response) {
+                val myResponse = response.body?.string()
+                val token = JSONObject(myResponse).get("token").toString()
+                val roomName = ""
+                val viewEvent = Connect(token, roomName)
+                roomViewModel.processInput(viewEvent)
+            }
+        })
+//        val token =
+//            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2E3MzE1ODZiMmZiZmY5MDc2YzRlZWQ1MzU1YTM3OThkLTE2NTg0ODM4NTMiLCJncmFudHMiOnsiaWRlbnRpdHkiOiJUSEFOSFRSQU5ESU5IIiwidmlkZW8iOnsicm9vbSI6ImFiY0AxMjMifSwiY2hhdCI6eyJzZXJ2aWNlX3NpZCI6IklTMmFhZDBhNDhlMWNkNDliNmIwOTBiYTgyZTRhNGZhZTgifX0sImlhdCI6MTY1ODQ4Mzg1MywiZXhwIjoxNjU4NDk4MjUzLCJpc3MiOiJTS2E3MzE1ODZiMmZiZmY5MDc2YzRlZWQ1MzU1YTM3OThkIiwic3ViIjoiQUMwMzA3YTg2NzVmN2I0NDk5NzI3ZDU0NzhhMjY1MWZmYSJ9.pTg5Ehv5TAJvBQqljrKUIgvMHKy7S7VM95f0u3Jdbkk"
+//        val roomName = ""
+//        val viewEvent = Connect(token, roomName)
+//        roomViewModel.processInput(viewEvent)
     }
 
     override fun onResume() {

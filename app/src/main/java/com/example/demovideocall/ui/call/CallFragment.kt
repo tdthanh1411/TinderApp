@@ -33,6 +33,8 @@ class CallFragment : Fragment() {
 
     private fun updateUi() {
         val intent = Intent(activity, RoomActivity::class.java)
+        val name = binding.txtUserIdentity.text.toString();
+        intent.putExtra("identity", name);
         startActivity(intent)
     }
 }
